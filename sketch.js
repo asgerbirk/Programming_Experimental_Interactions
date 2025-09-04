@@ -49,34 +49,16 @@ function drawAstronaut() {
 
 function drawBallerina() {
   push();
-  // placer ballerinaen til højre for midten
   translate(90, 30, 0);
 
-  // rolig pirouette
   rotateY(frameCount * 0.012);
 
-  // --- ORIENTERING (prøv disse én ad gangen alt efter model) ---
-  // Hvis hun står på hovedet:
   rotateZ(PI);
-  // Hvis hun ligger ned (Z-up -> Y-up):
   rotateX(-HALF_PI);
-  // Hvis fronten vender bagud:
-  // rotateY(PI);
 
-  // evt. justér størrelse hvis normalize gav noget stort/lille
-  // scale(1.2);
-
-  // --- MATERIALE ---
   noStroke();
 
-  // Debug: se om lys/materiale er problemet
-  // normalMaterial(); return;
-
-  // Standard: ensfarvet der reagerer på lys
   normalMaterial(235, 210, 230);
-
-  // Nødplan (altid synlig):
-  // emissiveMaterial(220, 220, 230);
 
   model(ballerina);
   pop();
