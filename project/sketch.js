@@ -8,8 +8,9 @@ let ballerina;
 
 function preload() {
   astronaut = loadModel("assets/astronaut.obj", true);
-  ballerina = loadModel("assets/ballerina.obj", true);
+  //ballerina = loadModel("assets/ballerina.obj", true);
 }
+
 function setup() {
   createCanvas(400, 400, WEBGL);
   // Lys → ellers bliver modellerne let helt mørke
@@ -96,6 +97,12 @@ function mouseClicked() {
     colorValue = 150;
   } else {
     colorValue = 0;
+  }
+}
+
+function keyPressed() {
+  if (key === "c") {
+    drawBallerina();
   }
 }
 
