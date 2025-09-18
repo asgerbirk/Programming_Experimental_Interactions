@@ -16,7 +16,7 @@ function setup() {
   // Lys → ellers bliver modellerne let helt mørke
   ambientLight(80); // base-lys
 
-  for (let i = 0; i < 200; i++) {
+  for (let i = 0; i < 201; i++) {
     rainDrops.push(new Rain());
   }
 
