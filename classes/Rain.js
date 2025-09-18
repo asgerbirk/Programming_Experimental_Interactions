@@ -3,8 +3,8 @@ class Rain {
     this.x = random(-200, 200); // fordi vi er i WEBGL
     this.y = random(-200, -100);
     this.z = random(-200, 200);
-    this.speed = random(2, 5);
-    this.len = random(10, 10); // længde på dråben
+    this.speed = random(1, 3);
+    this.len = random(5, 5); // længde på dråben
   }
 
   fall() {

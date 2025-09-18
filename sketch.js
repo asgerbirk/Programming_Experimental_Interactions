@@ -1,4 +1,7 @@
+let colorValue = 0;
+
 let rainDrops = [];
+let snowFlake = [];
 
 let astronaut;
 let ballerina;
@@ -11,23 +14,31 @@ function setup() {
   createCanvas(400, 400, WEBGL);
   // Lys → ellers bliver modellerne let helt mørke
   ambientLight(80); // base-lys
-  directionalLight(255, 255, 255, -0.5, -1, -0.3); // “sol” retning
+
   for (let i = 0; i < 200; i++) {
     rainDrops.push(new Rain());
+  }
+
+  for (let i = 0; i < 300; i++) {
+    snowFlake.push(new Snowflake());
   }
 }
 
 function draw() {
-  background(175);
+  background(colorValue);
 
   applyRotation();
   //drawAstronaut();
   //drawBallerina();
 
-  drawConnection();
   for (let drop of rainDrops) {
     drop.fall();
     drop.show();
+  }
+  for (let flake of snowFlake) {
+    // Update each snowflake position and display
+    flake.fall();
+    flake.show();
   }
 }
 
@@ -75,6 +86,20 @@ function applyRotation() {
   rotateY(map(mouseX, 0, width, -PI / 4, PI / 4));
 }
 
+function avoidSnowAndRain() {
+  const size = drawAstronaut().width;
+  const height = drawAstronaut().height;
+}
+
+function mouseClicked() {
+  if (colorValue === 0) {
+    colorValue = 150;
+  } else {
+    colorValue = 0;
+  }
+}
+
+/*
 function drawConnection() {
   push();
   line(0, 0, 0, 30, 20, -10);
@@ -83,3 +108,4 @@ function drawConnection() {
   sphere(10);
   pop();
 }
+*/
