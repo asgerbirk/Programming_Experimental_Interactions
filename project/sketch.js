@@ -94,9 +94,9 @@ function avoidSnowAndRain() {
 
 function mouseClicked() {
   if (colorValue === 0) {
-    colorValue = 255;
-  } else {
     colorValue = 150;
+  } else {
+    colorValue = 0;
   }
 }
 
